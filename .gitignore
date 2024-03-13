@@ -1,0 +1,34 @@
+# Torch
+*.pt
+*.pth
+
+# VS code
+.vscode
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+.vscode
+**/__pycache__/**
+
+*.pyc
+
+.DS_Store
+
+backup/
+plots/
+runs-tune-classification-clean/
+tmp/ 
+__pycache__/
+.tensorboard-info/
+data/*/
+anomaly_detection/
+archived/
+checkpoints/
+*logs*
+*results*
+reports*
+saved_*
+teacher/
+analysis/
+raw_data/

@@ -1,0 +1,50 @@
+run:
+  save_model: False
+
+data:
+  split_no: 333333
+  dataset: Houston
+  root: './data'
+  split: semi-public
+
+  val_samples_per_class: 0.2
+  # test_samples_per_class: 1.0
+
+  # 3,10,2,6
+  ood_left_out_classes: [3,]
+
+model:
+  seed: 1112222
+  init_no: 1
+  # GCN, GCNExp, GCNExpProp, GPN
+  model_name: GPN
+  hidden_dim: 256
+  drop_prob: 0.5
+  reduction: mean
+
+  latent_dim: 10
+  radial_layers: 10
+  pretrain_mode: flow
+
+  iteration_step: 10
+  teleport: 0.2
+
+  # emse_loss_weight: 0
+  uce_loss_weight: 1
+  # uce_log_loss_weight: 0
+  # ce_loss_weight: 1
+  # entropy_reg_weight: 0.001
+  # probability_teacher_weight: 0.001
+  # alpha_teacher_weight: 0.01
+  reconstruction_reg_weight: 0
+  # tv_alpha_reg_weight: 0
+  tv_vacuity_reg_weight: 0
+
+training:
+  epochs: 5000
+  stopping_patience: 30
+  stopping_metric: val_CE
+  lr: 0.01
+  weight_decay: 0.001
+
+  warmup_epochs: 5
